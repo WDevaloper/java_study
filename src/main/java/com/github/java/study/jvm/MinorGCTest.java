@@ -22,8 +22,5 @@ public class MinorGCTest {
 
     public static void main(String[] agrs) {
         testAllocation();
-
-        SoftReference<String> softReference =
-                new SoftReference<String>("",  new ReferenceQueue<>());
     }
 }

@@ -1,7 +1,7 @@
 package com.github.java.study.jvm;
 
 
-import static com.github.java.study.jvm.Util.printMemory;
+import static com.github.java.study.jvm.MemoryUtil.printMemory;
 
 //-Xms20M  初始堆大小为20M
 // -Xmx20M  堆最大分配内存20M

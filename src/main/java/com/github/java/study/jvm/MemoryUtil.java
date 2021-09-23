@@ -1,6 +1,6 @@
 package com.github.java.study.jvm;
 
-public class Util {
+public class MemoryUtil {
     /**
      * 打印出当前JVM剩余空间和总的空间大小
      */
@@ -8,6 +8,12 @@ public class Util {
         System.out.print("free is " + Runtime.getRuntime().freeMemory() / 1024 / 1024 + " M, ");
         System.out.println("total is " + Runtime.getRuntime().totalMemory() / 1024 / 1024 + " M, ");
     }
+
+    public static void printMemory(String log) {
+        System.out.print(log + " ,free is " + Runtime.getRuntime().freeMemory() / 1024 / 1024 + " M, ");
+        System.out.println("total is " + Runtime.getRuntime().totalMemory() / 1024 / 1024 + " M, ");
+    }
+
 
     public static void printLog(String msg) {
         System.out.println(msg);

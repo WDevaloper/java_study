@@ -8,7 +8,7 @@ public class GCRootThread {
 
     public static void main(String[] args) throws Exception {
         System.out.println("开始前内存情况:");
-        Util.printMemory();
+        MemoryUtil.printMemory();
         AsyncTask at = new AsyncTask(new GCRootThread());
         Thread thread = new Thread(at);
         thread.start();
@@ -18,13 +18,13 @@ public class GCRootThread {
         // 不会回收掉，所以证明 验证活跃线程可以作为GC Root
         System.gc();
         System.out.println("main方法执行完毕，完成GC");
-        Util.printMemory();
+        MemoryUtil.printMemory();
 
         thread.join();//当前线程 等到thread线程结束
         at = null; //线程结束 会回收掉
         System.gc();
         System.out.println("线程代码执行完毕，完成GC");
-        Util.printMemory();
+        MemoryUtil.printMemory();
     }
 
     private static class AsyncTask implements Runnable {

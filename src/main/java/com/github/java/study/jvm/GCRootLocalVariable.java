@@ -6,17 +6,17 @@ public class GCRootLocalVariable {
 
     public static void main(String[] args) {
         System.out.println("Start:");
-        Util.printMemory();
+        MemoryUtil.printMemory();
         method();
         System.gc();
         System.out.println("Second GC finish");
-        Util.printMemory();
+        MemoryUtil.printMemory();
     }
 
     public static void method() {
         GCRootLocalVariable g = new GCRootLocalVariable();
         System.gc();
         System.out.println("First GC finish");
-        Util.printMemory();
+        MemoryUtil.printMemory();
     }
 }

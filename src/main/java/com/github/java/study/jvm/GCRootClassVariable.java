@@ -14,12 +14,12 @@ public class GCRootClassVariable {
     public static void main(String[] args) {
         System.out.println("Start:");
 
-        Util.printMemory();
+        MemoryUtil.printMemory();
         GCRootClassVariable g = new GCRootClassVariable(4 * _10MB);
         g.classVariable = new GCRootClassVariable(8 * _10MB);
         g = null;
         System.gc();
         System.out.println("GC Finish");
-        Util.printMemory();
+        MemoryUtil.printMemory();
     }
 }

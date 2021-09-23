@@ -8,11 +8,11 @@ import java.lang.ref.WeakReference;
 public class WeekReferenceTest {
     public static void main(String[] args) {
         //先打印内存
-        Util.printMemory();
+        MemoryUtil.printMemory();
         // 创建强引用  11M
-        RefObject object = new RefObject(11);
+        ReferenceObject object = new ReferenceObject(11);
 
-        WeakReference<RefObject> softReference = new WeakReference<>(object);
+        WeakReference<ReferenceObject> softReference = new WeakReference<>(object);
         // 因为object是强引用 为不影响 测试软引用 把object = null
         object = null;//断开强引用
 
@@ -21,10 +21,10 @@ public class WeekReferenceTest {
         System.out.println("object = " + object);
 
         //gc完成之后再打印内存
-        Util.printMemory();
+        MemoryUtil.printMemory();
         // 来一次 gc
         System.gc();
-        Util.printMemory();
+        MemoryUtil.printMemory();
 
         System.out.println("softReference = " + softReference.get());
         System.out.println("object = " + object);
